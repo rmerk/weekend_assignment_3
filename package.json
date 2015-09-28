@@ -1,0 +1,21 @@
+{
+  "name": "weekend_prj_3",
+  "version": "1.0.0",
+  "description": "Weekend Project Three",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Ryan Merchlewitz",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+    "handlebars": "^4.0.3",
+    "handlebars-helpers": "^0.5.8",
+    "jcarousel": "^0.3.4",
+    "jquery": "^2.1.4",
+    "path": "^0.12.7"
+  }
+}

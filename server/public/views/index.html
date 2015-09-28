@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekend Project 3</title>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/handlebars/dist/handlebars.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/styles.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<script id="entry-template" type="text/x-handlebars-template">
+    <div class="container">
+        <h1>Feel Good! <br/>You're Meant To Be Here!</h1>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {{#each this}}
+                    {{#ifEquals @index 0}}
+                        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="active"></li>
+                    {{/ifEquals}}
+                    <li data-target="#carousel-example-generic" data-slide-to="{{@index}}"></li>
+
+                {{/each}}
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+            {{#each this}}
+                {{#ifEquals @index 0}}
+                    <div class="item active">
+                        <div class="carousel-content">
+                            <div class="formattingDiv">
+                                <p>Name: <br />{{this.name}}</p><br /><p>Description: <br />{{this.description}}</p><br /><p>Shoutout: <br />{{this.shoutouts}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/ifEquals}}
+                    <div class="item">
+                        <div class="carousel-content">
+                            <div class="formattingDiv">
+                                <p>Name:<br/> {{this.name}}</p><br /><p>Description: <br/>{{this.description}}</p><br /><p>Shoutout: <br/>{{this.shoutouts}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</script>
+<script src="/assets/app.min.js"></script>
+</body>
+</html>
+
+
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active">{{this.name}}<br />{{this.description}}<br/ > {{this.shoutouts}}<br /></li>
